@@ -65,7 +65,11 @@ Route::get('/dashboard', function () {
 Route::get('/dashboard/posts/checkSlug', [DashboardController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/dashboard/posts', DashboardController::class)->middleware('auth');
 
-Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
+Route::get('/dashboard/categories/checkSlug', [AdminCategoryController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/dashboard/categories', AdminCategoryController::class)->middleware('admin');
+
+// Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
+
 // buka terminal ketikan php artisan route:list -> utk mengetahui ada route apa saja
 
 // Route::get('/categories/{category:slug}', function (Category $category) {

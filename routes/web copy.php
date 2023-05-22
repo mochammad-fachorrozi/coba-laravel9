@@ -88,3 +88,4 @@ Route::get('posts/{slug}', function ($slug) {
         "post" => $new_post
     ]);
 });
+// closure = function anonymous

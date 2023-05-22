@@ -26,7 +26,7 @@ class Post
 
     public static function all()
     {
-        // properti static pake self, kalo biasa this->
+        // properti static pake self::$blog_posts, kalo biasa this->blog_post
         return collect(self::$blog_posts);
     }
 
@@ -42,7 +42,6 @@ class Post
         // }
         // return $post;
 
-        return $posts->firstWhere('slug', $slug);
         return $posts->firstWhere('slug', $slug);
     }
 }
